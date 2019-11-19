@@ -37,6 +37,7 @@ public class LoseDetector : MonoBehaviour
     {
         if (IsNotColliding() || IsZRotated())
         {
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 }
