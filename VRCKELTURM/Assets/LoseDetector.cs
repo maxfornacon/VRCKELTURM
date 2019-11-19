@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class LoseDetector : MonoBehaviour
 {
@@ -30,12 +31,12 @@ public class LoseDetector : MonoBehaviour
         return false;
     }
 
+
     // Update is called once per frame
     void Update()
     {
         if (IsNotColliding() || IsZRotated())
         {
-            Debug.Log("You lost");
         }
     }
 }
