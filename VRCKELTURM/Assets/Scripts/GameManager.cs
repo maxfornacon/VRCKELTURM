@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour {
 
 	bool gameHasEnded = false;
 	public GameObject gameOverScreen;
-
 	public float timeUntilLoseScreen = 1f;
 
 	/// <summary>
