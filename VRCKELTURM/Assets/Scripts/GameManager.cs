@@ -4,14 +4,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
 	bool gameHasEnded = false;
+	public GameObject gameOverScreen;
 
-	public float restartDelay = 3f;
-
-	public GameObject completeLevelUI;
+	public float timeUntilLoseScreen = 1f;
 
 	public void CompleteLevel ()
 	{
-		completeLevelUI.SetActive(true);
+		gameOverScreen.SetActive(true);
 	}
 
 	public void EndGame ()
@@ -20,8 +19,7 @@ public class GameManager : MonoBehaviour {
 		{
 			gameHasEnded = true;
 			Debug.Log("GAME OVER");
-			Invoke("CompleteLevel", 1f);
-			//Invoke("Restart", restartDelay);
+			Invoke(nameof(CompleteLevel), timeUntilLoseScreen);
 		}
 	}
 

@@ -5069,8 +5069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf1bd96e953dd3a68f7f4e00dd02eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartDelay: 3
-  completeLevelUI: {fileID: 2061420637}
+  gameOverScreen: {fileID: 2061420637}
+  timeUntilLoseScreen: 1
 --- !u!4 &1093077305
 Transform:
   m_ObjectHideFlags: 0
@@ -6183,7 +6183,7 @@ PrefabInstance:
     - target: {fileID: 548230512636417509, guid: bf68286e9491a1bc6a4a41ef2e8c64c2,
         type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: GameOverScreen
       objectReference: {fileID: 0}
     - target: {fileID: 548230512636417509, guid: bf68286e9491a1bc6a4a41ef2e8c64c2,
         type: 3}
@@ -6299,6 +6299,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 548230513031505540, guid: bf68286e9491a1bc6a4a41ef2e8c64c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Heading
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf68286e9491a1bc6a4a41ef2e8c64c2, type: 3}
@@ -8635,7 +8640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1774631895
 Transform:
   m_ObjectHideFlags: 0
@@ -9296,7 +9301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: bd16a121ccdf0674daacc3277d88c3c0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd16a121ccdf0674daacc3277d88c3c0, type: 3}
       propertyPath: m_LocalPosition.x
