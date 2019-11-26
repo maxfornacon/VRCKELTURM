@@ -3,31 +3,15 @@ using UnityEngine;
 
 public class LoseDetector : MonoBehaviour
 {
-    private int collisionCount = 0;
-
-    public bool IsNotColliding()
+    private bool grabbed = false;
+    
+    private bool IsFalling()
     {
-        return collisionCount == 0;
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        collisionCount++;
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        collisionCount--;
-    }
-
-    private bool IsZRotated()
-    {
-        float z = GetComponent<Transform>().rotation.z;
-        if (0 - z < -0.1 || 0 - z > 0.1)
+        float yVelocity = GetComponent<Rigidbody>().velocity.y;
+        if (!grabbed && yVelocity < -2)
         {
             return true;
         }
-        
         return false;
     }
 
@@ -35,7 +19,7 @@ public class LoseDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsNotColliding() || IsZRotated())
+        if (IsFalling())
         {
             FindObjectOfType<GameManager>().EndGame();
         }
