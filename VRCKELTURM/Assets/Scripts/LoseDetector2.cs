@@ -26,7 +26,7 @@ public class LoseDetector2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (collisionCount > 4)
+        if (collisionCount > 3)
         {
            FindObjectOfType<GameManager>().EndGame();
         }        
