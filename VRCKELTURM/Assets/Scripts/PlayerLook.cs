@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    [SerializeField] private string mouseXInputName, mouseYInputName;
-    [SerializeField] private float mouseSensitivity;
+    [SerializeField] public string mouseXInputName, mouseYInputName;
+    [SerializeField] public float mouseSensitivity;
     
-    [SerializeField] private Transform playerBody;
+    [SerializeField] public Transform playerBody;
     
     private float xAxisClamp;
 
     private void Awake()
     {
-        //LockCursor();
         xAxisClamp = 0.0f;
     }
-
-//    private void LockCursor()
-//    {
-//        Cursor.lockState= CursorLockMode.Locked;
-//    }
 
     private void Update()
     {

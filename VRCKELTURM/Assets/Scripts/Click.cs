@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Click : MonoBehaviour
 {
-    [SerializeField] private LayerMask clickablesLayer;
+    [SerializeField] public LayerMask clickablesLayer;
 
     private List<GameObject> selectedObjects;
 
@@ -15,13 +15,14 @@ public class Click : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject obj;
+        //GameObject obj;
 
         if(Input.GetMouseButtonDown(0))
         {
             RaycastHit rayHit;
 
-            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, clickablesLayer))
+            Camera cam = GameObject.Find("PlayerCamera").GetComponent<Camera>();
+            if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, clickablesLayer))
             {
                 ClickOn clickOnScript =rayHit.collider.GetComponent<ClickOn>();
                 if(selectedObjects.Count==0)

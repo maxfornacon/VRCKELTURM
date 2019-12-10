@@ -9,6 +9,7 @@ public class Drag : MonoBehaviour
     public float speed;
     public Vector3 offset;
 
+
     void OnMouseDrag()
     {
         transform.position = MouseWorldPoint() + offset;
@@ -16,24 +17,16 @@ public class Drag : MonoBehaviour
 
     private Vector3 MouseWorldPoint()
     {
+        Camera cam = GameObject.Find("PlayerCamera").GetComponent<Camera>();
         Vector3 mPoint = Input.mousePosition;
-        if (Input.GetKey(KeyCode.RightShift))
-        {
-            distanceValueY = mPoint.y;
-            distance = distance + (distanceValueY - mPoint.y);
-            mPoint.z = distance;
-            return Camera.main.ScreenToWorldPoint(mPoint) * speed;
-        }
-        else
-        {
-            mPoint.z = distance;
-            return Camera.main.ScreenToWorldPoint(mPoint) * speed;
-        }
+        mPoint.z = distance;
+        return cam.ScreenToWorldPoint(mPoint) * speed;
     }
 
     public void OnMouseDown()
     {
-        distance = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+        Camera cam = GameObject.Find("PlayerCamera").GetComponent<Camera>();
+        distance = cam.WorldToScreenPoint(gameObject.transform.position).z;
         offset = gameObject.transform.position - MouseWorldPoint();
     }
 }

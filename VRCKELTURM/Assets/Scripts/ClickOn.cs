@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ClickOn : MonoBehaviour
 {
-    [SerializeField] private Material colorNonclick;
-    [SerializeField] private Material colorClick;
+    [SerializeField] public Material colorNonclick;
+    [SerializeField] public Material colorClick;
 
     private MeshRenderer myRend;
     [HideInInspector] public bool currentlySelected = false;
