@@ -1949,6 +1949,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8071086175867464607, guid: ae484b539935843cba45171c28ef4828,
+        type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 734021684}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae484b539935843cba45171c28ef4828, type: 3}
 --- !u!1001 &579840228
@@ -2686,6 +2691,12 @@ Transform:
   m_Father: {fileID: 2142389602}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &734021684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8071086176020926915, guid: ae484b539935843cba45171c28ef4828,
+    type: 3}
+  m_PrefabInstance: {fileID: 566723906}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &734331212
 GameObject:
   m_ObjectHideFlags: 0
