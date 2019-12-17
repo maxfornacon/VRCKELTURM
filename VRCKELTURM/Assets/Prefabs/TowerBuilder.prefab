@@ -40,7 +40,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3067857720711354012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d37f7327fe72c04b84e3bdf66fb3381, type: 3}
+  m_Script: {fileID: 11500000, guid: 4146fd836c0154a4c800fea19c8ca3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodBrick: {fileID: 100000, guid: 7d6ce2f24d1f75b4ea585fd504f3662f, type: 3}
+  woodBrick: {fileID: 5897098171250625235, guid: 93c072d2c43a6644c8b1071b7f8105cb,
+    type: 3}

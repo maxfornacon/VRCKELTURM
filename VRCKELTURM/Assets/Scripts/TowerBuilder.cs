@@ -8,7 +8,7 @@ public class TowerBuilder : MonoBehaviour
 
   void Start()
   {
-    buildTower(25, 0f, 5f); //number of layers for Tower, startHeight, scale of BrickAsset
+    buildTower(15, 0f, 5f); //number of layers for Tower, startHeight, scale of BrickAsset
   }
 
   void buildTower(int layers, float startHeight, float scale) {
@@ -47,7 +47,7 @@ public class TowerBuilder : MonoBehaviour
     }
     brick = Instantiate(woodBrick, new Vector3(z, y, x), rotation) as GameObject;
     brick.transform.localScale = new Vector3(scale, scale, scale);
-    BoxCollider bC = brick.AddComponent<BoxCollider>() as BoxCollider;
-    Rigidbody rB = brick.AddComponent<Rigidbody>() as Rigidbody;
+    //BoxCollider bC = brick.AddComponent<BoxCollider>() as BoxCollider;
+    //Rigidbody rB = brick.AddComponent<Rigidbody>() as Rigidbody;
   }
 }
