@@ -1,27 +1,45 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class LoseDetector : MonoBehaviour
+public class LoseDetector2 : MonoBehaviour
 {
-    private bool grabbed = false;
+    private short collisionCount = 0;
     
-    private bool IsFalling()
+    /// <summary>
+    /// Increases collisionCount on collision enter.
+    /// </summary>
+    /// <param name="other">the collision partner</param>
+    private void OnCollisionEnter(Collision other)
     {
-        float yVelocity = GetComponent<Rigidbody>().velocity.y;
-        if (!grabbed && yVelocity < -2)
+        if (other.transform.gameObject.CompareTag("Blocks"))
         {
-            return true;
+            collisionCount++;
         }
-        return false;
     }
 
-
-    // Update is called once per frame
+    /// <summary>
+    /// Reduces collisionCount on collision exit.
+    /// </summary>
+    /// <param name="other">The collision partner</param>
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.transform.gameObject.CompareTag("Blocks"))
+        {
+            collisionCount--;
+        }
+    }
+    
+    /// <summary>
+    /// Checks if collisionCount is greater than 3. If so the game is lost and the EndGame() method of the game manager
+    /// is triggered.
+    /// </summary>
     void Update()
     {
-        if (IsFalling())
+        if (collisionCount > 3)
         {
-            FindObjectOfType<GameManager>().EndGame();
-        }
+           FindObjectOfType<GameManager>().EndGame();
+        }        
     }
 }
