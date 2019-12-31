@@ -40,8 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3067857720711354012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4146fd836c0154a4c800fea19c8ca3f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d37f7327fe72c04b84e3bdf66fb3381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodBrick: {fileID: 5897098171250625235, guid: 93c072d2c43a6644c8b1071b7f8105cb,
-    type: 3}
+  bricks:
+  - {fileID: 118189015407120742, guid: 9ecf3d4cf960dde46bc42ecdb5e2c37f, type: 3}
+  - {fileID: 1278202793348461030, guid: af2f5f13b92a7fc48aa6cafd567ea460, type: 3}
+  probability: 3c00000028000000
