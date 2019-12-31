@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class TowerBuilder : MonoBehaviour
 {
-  public GameObject woodBrick; //link BrickAsset here in Unity
+  //link BrickTyp here in Unity
+  public List<GameObject> bricks = new List<GameObject>();
+
+  //spawn probability in % for each BrickTyp (musst be 100% in total)
+  public List<int> probability = new List<int>();
+
+  //smallest possible random hightScaleVariation for Bricks
+  float variation = 0.98f;
 
   void Start()
   {
-    buildTower(15, 0f, 5f); //number of layers for Tower, startHeight, scale of BrickAsset
+    buildTower(15, 0f, 4f); //number of layers for Tower, startHeight, scale of BrickAsset
   }
 
   void buildTower(int layers, float startHeight, float scale) {
@@ -19,22 +26,22 @@ public class TowerBuilder : MonoBehaviour
     {
       if(i%2 == 0)
       {
-        buildBrick(woodBrick, false, -0.025f * scale, y, 0, scale); //left
-        buildBrick(woodBrick, false, 0, y, 0, scale); //middle
-        buildBrick(woodBrick, false, 0.025f * scale, y, 0, scale); //right
+        buildBrick(false, -0.025f * scale, y, 0, scale); //left
+        buildBrick(false, 0, y, 0, scale); //middle
+        buildBrick(false, 0.025f * scale, y, 0, scale); //right
       }
       else
       {
         y = y + 0.015f * scale;
-        buildBrick(woodBrick, true, 0, y, -0.025f * scale, scale); //rear
-        buildBrick(woodBrick, true, 0, y, 0, scale); //middle
-        buildBrick(woodBrick, true, 0, y, 0.025f * scale, scale); //front
+        buildBrick(true, 0, y, -0.025f * scale, scale); //rear
+        buildBrick(true, 0, y, 0, scale); //middle
+        buildBrick(true, 0, y, 0.025f * scale, scale); //front
         y = y + 0.015f * scale;
       }
     }
   }
 
-  void buildBrick(GameObject brick, bool rotate, float z, float y, float x, float scale)
+  void buildBrick(bool rotate, float z, float y, float x, float scale)
   {
     Quaternion rotation;
     if(rotate)
@@ -45,9 +52,24 @@ public class TowerBuilder : MonoBehaviour
     {
       rotation = new Quaternion(0, 0, 0, 0);
     }
-    brick = Instantiate(woodBrick, new Vector3(z, y, x), rotation) as GameObject;
-    brick.transform.localScale = new Vector3(scale, scale, scale);
+    GameObject brick = Instantiate(bricks[randomBrick()], new Vector3(z, y, x), rotation) as GameObject;
+    brick.transform.localScale = new Vector3(scale, Random.Range(variation, 1) * scale, scale);
     //BoxCollider bC = brick.AddComponent<BoxCollider>() as BoxCollider;
     //Rigidbody rB = brick.AddComponent<Rigidbody>() as Rigidbody;
+    //rB.AddForce(100 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+    //OVRGrabbable ovrG = brick.AddComponent<OVRGrabbable>() as OVRGrabbable;
+  }
+
+  int randomBrick()
+  {
+    int random = Random.Range(0,100);
+    int i = 0;
+    int totalprob = probability[0];
+    while(random > totalprob)
+    {
+      i++;
+      totalprob += probability[i];
+    }
+    return i;
   }
 }
