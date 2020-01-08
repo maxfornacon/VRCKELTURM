@@ -257,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157201544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7090275, y: 0, z: -2.75}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 196632866}
@@ -278,8 +278,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoManageScriptDefines: 1
   activeScriptingDefineSymbolsWithoutSDKClasses: []
-  scriptAliasLeftController: {fileID: 1864358852042814}
-  scriptAliasRightController: {fileID: 1307869702164014}
+  scriptAliasLeftController: {fileID: 0}
+  scriptAliasRightController: {fileID: 0}
   autoManageVRSettings: 1
   autoLoadSetup: 1
   setups:
@@ -317,6 +317,12 @@ Transform:
   m_Father: {fileID: 157201545}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &348226008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1811898394222102, guid: efe266538a8dcda4dbd04fbff7997053,
+    type: 3}
+  m_PrefabInstance: {fileID: 1864868219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &421550122
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +544,10 @@ MonoBehaviour:
   clickButton: 256
   controller: 1
   canvas: {fileID: 108756587}
+  sdkManager: {fileID: 157201544}
+  leftController: {fileID: 1864358852042814}
+  rightController: {fileID: 1307869702164014}
+  localAvatar: {fileID: 348226008}
 --- !u!1 &1362152904
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,8 +597,8 @@ MonoBehaviour:
   actualHeadset: {fileID: 1864868225}
   actualLeftController: {fileID: 1864868224}
   actualRightController: {fileID: 1864868223}
-  modelAliasLeftController: {fileID: 1864358852042814}
-  modelAliasRightController: {fileID: 1307869702164014}
+  modelAliasLeftController: {fileID: 0}
+  modelAliasRightController: {fileID: 0}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
@@ -981,7 +991,7 @@ PrefabInstance:
     - target: {fileID: 7181180586961434633, guid: 6edea2e14c01b2846a413c4e8efcff28,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6824002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7181180586961434633, guid: 6edea2e14c01b2846a413c4e8efcff28,
         type: 3}
@@ -1032,6 +1042,59 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114576774528325842, guid: 6edea2e14c01b2846a413c4e8efcff28,
+        type: 3}
+      propertyPath: bricks.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114576774528325842, guid: 6edea2e14c01b2846a413c4e8efcff28,
+        type: 3}
+      propertyPath: probability.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114576774528325842, guid: 6edea2e14c01b2846a413c4e8efcff28,
+        type: 3}
+      propertyPath: bricks.Array.data[2]
+      value: 
+      objectReference: {fileID: 5460138974858578466, guid: 69c4c9d53daf1194c90a86b4b43dbc1a,
+        type: 3}
+    - target: {fileID: 114576774528325842, guid: 6edea2e14c01b2846a413c4e8efcff28,
+        type: 3}
+      propertyPath: bricks.Array.data[3]
+      value: 
+      objectReference: {fileID: 8415044749751768940, guid: 2311d42b9c3303a4e890221804fdda65,
+        type: 3}
+    - target: {fileID: 114576774528325842, guid: 6edea2e14c01b2846a413c4e8efcff28,
+        type: 3}
+      propertyPath: bricks.Array.data[4]
+      value: 
+      objectReference: {fileID: 1661770021942127212, guid: 2f5ec151a8874844688b814833758ce3,
+        type: 3}
+    - target: {fileID: 114576774528325842, guid: 6edea2e14c01b2846a413c4e8efcff28,
+        type: 3}
+      propertyPath: probability.Array.data[2]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114576774528325842, guid: 6edea2e14c01b2846a413c4e8efcff28,
+        type: 3}
+      propertyPath: probability.Array.data[3]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114576774528325842, guid: 6edea2e14c01b2846a413c4e8efcff28,
+        type: 3}
+      propertyPath: probability.Array.data[4]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114576774528325842, guid: 6edea2e14c01b2846a413c4e8efcff28,
+        type: 3}
+      propertyPath: probability.Array.data[0]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114576774528325842, guid: 6edea2e14c01b2846a413c4e8efcff28,
+        type: 3}
+      propertyPath: probability.Array.data[1]
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6edea2e14c01b2846a413c4e8efcff28, type: 3}
@@ -1093,6 +1156,11 @@ PrefabInstance:
     - target: {fileID: 114561855159712898, guid: efe266538a8dcda4dbd04fbff7997053,
         type: 3}
       propertyPath: StartWithControllers
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114561855159712898, guid: efe266538a8dcda4dbd04fbff7997053,
+        type: 3}
+      propertyPath: UseSDKPackets
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
