@@ -20,7 +20,6 @@ public class ActivatePauseMenu : MonoBehaviour
         if (OVRInput.GetDown(clickButton, controller)) //check for ESC Key
         {
             canvas.SetActive(true);
-            sdkManager.GetComponent<VRTK_SDKManager>()
             sdkManager.GetComponent<VRTK_SDKManager>().scriptAliasRightController = rightController;
             localAvatar.GetComponent<OvrAvatar>().ShowControllers(true);
         }
