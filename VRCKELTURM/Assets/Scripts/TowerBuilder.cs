@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class TowerBuilder : MonoBehaviour
 {
+  public static int layers = 10;
+  
   //link BrickTyp here in Unity
   public List<GameObject> bricks = new List<GameObject>();
 
@@ -15,10 +18,10 @@ public class TowerBuilder : MonoBehaviour
 
   void Start()
   {
-    buildTower(15, 0f, 4f); //number of layers for Tower, startHeight, scale of BrickAsset
+    buildTower(layers, 0f, 4f); //number of layers for Tower, startHeight, scale of BrickAsset
   }
 
-  void buildTower(int layers, float startHeight, float scale) {
+  public void buildTower(int layers, float startHeight, float scale) {
     Debug.Log("Building Tower with " + layers + " Layers!");
     //Vector3 = (z, y, x) = (right, up, forward)
     float y = startHeight + 0.015f * scale / 2;

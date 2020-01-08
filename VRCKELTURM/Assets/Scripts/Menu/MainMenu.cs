@@ -5,9 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
- 
-    public void PlayGame()
+    public void LoadLevelOne() // Level 1
     {
+        TowerBuilder.layers = 10;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    
+    public void LoadLevelTwo() // Level 2
+    {
+        TowerBuilder.layers = 30;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -16,4 +22,6 @@ public class MainMenu : MonoBehaviour
       Debug.Log("quited game");
       Application.Quit();
     }
+    
+    
 }
