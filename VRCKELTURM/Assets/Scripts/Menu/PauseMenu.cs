@@ -8,11 +8,11 @@ public class PauseMenu : MonoBehaviour
 {
     public OVRInput.Button clickButton = OVRInput.Button.Start;
     public OVRInput.Controller controller = OVRInput.Controller.LTouch;
-    
-    
+
+
     public GameObject pointer;
-    
-    
+
+
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
