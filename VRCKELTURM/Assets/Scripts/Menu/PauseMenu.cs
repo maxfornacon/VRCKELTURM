@@ -25,7 +25,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetDown(clickButton, controller)) //check for ESC Key
+        if (OVRInput.GetDown(clickButton, controller))
         {
           if (GameIsPaused)
           {
@@ -48,7 +48,6 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        Debug.Log("CLICKED BITCHES!");
       pauseMenuUI.SetActive(false);
       Time.timeScale = 1f; //continue game
       GameIsPaused = false;
