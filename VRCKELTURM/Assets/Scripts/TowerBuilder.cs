@@ -6,7 +6,7 @@ using UnityEngine;
 public class TowerBuilder : MonoBehaviour
 {
   public static int layers = 10;
-  
+
   //link BrickTyp here in Unity
   public List<GameObject> bricks = new List<GameObject>();
 
@@ -68,7 +68,7 @@ public class TowerBuilder : MonoBehaviour
     int random = Random.Range(0,100);
     int i = 0;
     int totalprob = probability[0];
-    while(random > totalprob)
+    while(random >= totalprob)
     {
       i++;
       totalprob += probability[i];
