@@ -5,23 +5,40 @@ using UnityEngine;
 
 public class TowerBuilder : MonoBehaviour
 {
-  public static int layers = 10;
-  
+  public static float startHeight;
+  public static int layers;
+  public static float scale;
+
   //link BrickTyp here in Unity
   public List<GameObject> bricks = new List<GameObject>();
 
   //spawn probability in % for each BrickTyp (musst be 100% in total)
-  public List<int> probability = new List<int>();
+  //List<int> probability = new List<int>();
+  public static List<int> probability;
 
   //smallest possible random hightScaleVariation for Bricks
-  float variation = 0.98f;
+  //float variation = 0.98f;
+  public static float variation;
+
+  public static void setTowerSettings(
+      float startHeight2,
+      int layers2,
+      float scale2,
+      List<int> probability2,
+      float variation2) {
+    startHeight = startHeight2;
+    layers = layers2;
+    scale = scale2;
+    probability = probability2;
+    variation = variation2;
+  }
 
   void Start()
   {
-    buildTower(layers, 0f, 4f); //number of layers for Tower, startHeight, scale of BrickAsset
+    buildTower();
   }
 
-  public void buildTower(int layers, float startHeight, float scale) {
+  public void buildTower() {
     Debug.Log("Building Tower with " + layers + " Layers!");
     //Vector3 = (z, y, x) = (right, up, forward)
     float y = startHeight + 0.015f * scale / 2;

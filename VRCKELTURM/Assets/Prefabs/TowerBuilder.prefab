@@ -46,4 +46,6 @@ MonoBehaviour:
   bricks:
   - {fileID: 118189015407120742, guid: 9ecf3d4cf960dde46bc42ecdb5e2c37f, type: 3}
   - {fileID: 1278202793348461030, guid: af2f5f13b92a7fc48aa6cafd567ea460, type: 3}
-  probability: 3c00000028000000
+  - {fileID: 1661770021942127212, guid: 2f5ec151a8874844688b814833758ce3, type: 3}
+  - {fileID: 8415044749751768940, guid: 2311d42b9c3303a4e890221804fdda65, type: 3}
+  - {fileID: 5460138974858578466, guid: 69c4c9d53daf1194c90a86b4b43dbc1a, type: 3}
