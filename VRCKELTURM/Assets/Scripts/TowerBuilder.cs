@@ -9,6 +9,7 @@ public class TowerBuilder : MonoBehaviour
   public static int layers;
   public static float scale;
 
+
   //link BrickTyp here in Unity
   public List<GameObject> bricks = new List<GameObject>();
 
