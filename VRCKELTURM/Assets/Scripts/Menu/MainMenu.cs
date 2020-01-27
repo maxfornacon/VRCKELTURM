@@ -21,13 +21,15 @@ public class MainMenu : MonoBehaviour
 
     public void LoadLevelThree() // Level 3
     {
-        TowerBuilder.layers = 1; /* Wert fuer Anzahl Ebenen anpassen!!! */
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+         List<int> probability = new List<int>() {20,20,20,20,20};
+         TowerBuilder.setTowerSettings(0, 18, 4, probability, 0.98f);
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void LoadLevelFour() // Level 4
     {
-        TowerBuilder.layers = 1; /* Wert fuer Anzahl Ebenen anpassen!!! */
+        List<int> probability = new List<int>() {0,0,100,0,0};
+        TowerBuilder.setTowerSettings(0, 40, 4, probability, 0.98f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
