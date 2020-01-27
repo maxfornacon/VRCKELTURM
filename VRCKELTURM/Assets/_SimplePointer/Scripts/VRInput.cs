@@ -13,6 +13,7 @@ public class VRInput : BaseInput
     public GameObject leftPointer;
     public GameObject rightPointer;
     public Canvas canvas;
+    public GameObject menu;
 
     protected override void Awake()
     {
@@ -46,18 +47,24 @@ public class VRInput : BaseInput
     {
         if ( OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.Touch))
         {
-            clickButton = OVRInput.Button.PrimaryIndexTrigger;
-            eventCamera = leftPointer.GetComponent<Camera>();
-            canvas.worldCamera = eventCamera;
-            leftPointer.SetActive(true);
-            rightPointer.SetActive(false);  
+            if (menu.activeSelf)
+            {
+                clickButton = OVRInput.Button.PrimaryIndexTrigger;
+                eventCamera = leftPointer.GetComponent<Camera>();
+                canvas.worldCamera = eventCamera;
+                leftPointer.SetActive(true);
+                rightPointer.SetActive(false);
+            }
         } else if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
         {
-            clickButton = OVRInput.Button.SecondaryIndexTrigger;
-            eventCamera = rightPointer.GetComponent<Camera>();
-            canvas.worldCamera = eventCamera;
-            leftPointer.SetActive(false);
-            rightPointer.SetActive(true);
+            if (menu.activeSelf)
+            {
+                clickButton = OVRInput.Button.SecondaryIndexTrigger;
+                eventCamera = rightPointer.GetComponent<Camera>();
+                canvas.worldCamera = eventCamera;
+                leftPointer.SetActive(false);
+                rightPointer.SetActive(true);
+            }
         }
     }
 }
