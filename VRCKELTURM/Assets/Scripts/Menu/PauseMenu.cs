@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        Pause();
+        //Pause();
     }
 
     // Update is called once per frame
@@ -59,6 +59,9 @@ public class PauseMenu : MonoBehaviour
     {
       Debug.Log("Loading Main Menu...");
       SceneManager.LoadScene(0); // Load Menu
+      Time.timeScale = 1f; //continue game 
+      List<int> probability = new List<int>() {100,0,0,0,0};
+      TowerBuilder.setTowerSettings(0, 0, 4, probability, 0.98f);
       //SceneManager.LoadScene("MenuScene");
     }
 
