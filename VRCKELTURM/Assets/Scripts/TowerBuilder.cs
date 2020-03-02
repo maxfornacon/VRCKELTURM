@@ -27,7 +27,7 @@ public class TowerBuilder : MonoBehaviour
       float scale2,
       List<int> probability2,
       float variation2) {
-    startHeight = startHeight2;
+    startHeight = startHeight2 + 0.1f;
     layers = layers2;
     scale = scale2;
     probability = probability2;

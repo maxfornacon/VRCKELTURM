@@ -5,34 +5,42 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void LoadLevelOne() // Level 1
+    public void LoadLevelOne() // Level 1 nur Holz
     {
         List<int> probability = new List<int>() {100,0,0,0,0};
+        TowerBuilder.setTowerSettings(0, 18, 4, probability, 0.94f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadLevelTwo() // Level 2 viel holz und etwas von allem anderen
+    {
+        List<int> probability = new List<int>() {40,15,15,15,15};
         TowerBuilder.setTowerSettings(0, 18, 4, probability, 0.98f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
     }
 
-    public void LoadLevelTwo() // Level 2
+    public void LoadLevelThree() // Level 3 nur zum Zerstören
     {
-        List<int> probability = new List<int>() {20,80,0,0,0};
-        TowerBuilder.setTowerSettings(0, 24, 4, probability, 0.98f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    public void LoadLevelThree() // Level 3
-    {
-         List<int> probability = new List<int>() {20,20,20,20,20};
-         TowerBuilder.setTowerSettings(0, 14, 4, probability, 0.98f);
+         List<int> probability = new List<int>() {0,0,0,0,100};
+         TowerBuilder.setTowerSettings(0, 32, 4, probability, 0.98f);
          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void LoadLevelFour() // Level 4
+    public void LoadLevelFour() // Level 4 sehr rutschig
     {
-        List<int> probability = new List<int>() {0,0,100,0,0};
-        TowerBuilder.setTowerSettings(0, 40, 4, probability, 0.98f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+      List<int> probability = new List<int>() {25,25,0,50,0};
+      TowerBuilder.setTowerSettings(0, 20, 4, probability, 0.98f);
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void LoadLevelFive() // Extra Level 5 GolfPlatz
+    {
+        List<int> probability = new List<int>() {100,0,0,0,0};
+        TowerBuilder.setTowerSettings(0, 0, 4, probability, 0.98f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
+
+    // Ein Level zum Selber konfigurieren?
 
     public void QuitGame()
     {
