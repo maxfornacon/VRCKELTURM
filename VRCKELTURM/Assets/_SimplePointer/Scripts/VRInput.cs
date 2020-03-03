@@ -16,12 +16,6 @@ public class VRInput : BaseInput
     public Canvas canvas;
     public GameObject menu;
 
-    public Hand leftHand;
-    public Hand rightHand;
-
-    public GameObject leftController;
-    public GameObject rightController;
-
     protected override void Awake()
     {
         GetComponent<BaseInputModule>().inputOverride = this;

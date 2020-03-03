@@ -22,6 +22,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject leftController;
     public GameObject rightController;
 
+    public GameObject timerUI;
+
     private void Start()
     {
         //Pause();
@@ -35,6 +37,7 @@ public class PauseMenu : MonoBehaviour
           if (GameIsPaused)
           {
               Resume();
+              
           }
           else
           {
@@ -55,6 +58,8 @@ public class PauseMenu : MonoBehaviour
       
       leftHand.SetActive(false);
       rightHand.SetActive(false);
+      
+      timerUI.SetActive(false);
     }
 
     public void Resume()
@@ -69,6 +74,8 @@ public class PauseMenu : MonoBehaviour
       
       leftHand.SetActive(true);
       rightHand.SetActive(true);
+
+      timerUI.SetActive(true);
     }
 
     public void LoadMenu()
