@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using OVRTouchSample;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -14,6 +15,12 @@ public class VRInput : BaseInput
     public GameObject rightPointer;
     public Canvas canvas;
     public GameObject menu;
+
+    public Hand leftHand;
+    public Hand rightHand;
+
+    public GameObject leftController;
+    public GameObject rightController;
 
     protected override void Awake()
     {
@@ -52,6 +59,7 @@ public class VRInput : BaseInput
                 clickButton = OVRInput.Button.PrimaryIndexTrigger;
                 eventCamera = leftPointer.GetComponent<Camera>();
                 canvas.worldCamera = eventCamera;
+                
                 leftPointer.SetActive(true);
                 rightPointer.SetActive(false);
             }

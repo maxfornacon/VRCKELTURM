@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using OVRTouchSample;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,13 +10,17 @@ public class PauseMenu : MonoBehaviour
     public OVRInput.Button clickButton = OVRInput.Button.Start;
     public OVRInput.Controller controller = OVRInput.Controller.LTouch;
 
-
     public GameObject pointer;
-
 
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    
+    public GameObject leftHand;
+    public GameObject rightHand;
+
+    public GameObject leftController;
+    public GameObject rightController;
 
     private void Start()
     {
@@ -44,6 +49,12 @@ public class PauseMenu : MonoBehaviour
       Time.timeScale = 0f; //stop game
       GameIsPaused = true;
       pointer.SetActive(true);
+      
+      leftController.SetActive(true);
+      rightController.SetActive(true);
+      
+      leftHand.SetActive(false);
+      rightHand.SetActive(false);
     }
 
     public void Resume()
@@ -52,7 +63,12 @@ public class PauseMenu : MonoBehaviour
       Time.timeScale = 1f; //continue game
       GameIsPaused = false;
       pointer.SetActive(false);
-
+      
+      leftController.SetActive(false);
+      rightController.SetActive(false);
+      
+      leftHand.SetActive(true);
+      rightHand.SetActive(true);
     }
 
     public void LoadMenu()
