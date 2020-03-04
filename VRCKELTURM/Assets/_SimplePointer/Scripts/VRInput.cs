@@ -15,6 +15,7 @@ public class VRInput : BaseInput
     public GameObject rightPointer;
     public Canvas canvas;
     public GameObject menu;
+    public GameObject optionalLevelChooser;
 
     protected override void Awake()
     {
@@ -48,7 +49,7 @@ public class VRInput : BaseInput
     {
         if ( OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.Touch))
         {
-            if (menu.activeSelf)
+            if (menu.activeSelf || optionalLevelChooser.activeSelf)
             {
                 clickButton = OVRInput.Button.PrimaryIndexTrigger;
                 eventCamera = leftPointer.GetComponent<Camera>();
@@ -59,7 +60,7 @@ public class VRInput : BaseInput
             }
         } else if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
         {
-            if (menu.activeSelf)
+            if (menu.activeSelf || optionalLevelChooser.activeSelf)
             {
                 clickButton = OVRInput.Button.SecondaryIndexTrigger;
                 eventCamera = rightPointer.GetComponent<Camera>();
