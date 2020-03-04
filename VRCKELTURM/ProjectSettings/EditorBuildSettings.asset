@@ -4,7 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects:
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 2e32fed8e3f053cd3b1ab5ee0aad63b4,
-      type: 2}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 262f4338d2f85e641b54a43b79c21c72
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 96fb4d127f2ca1ee3b2c4c505a6fc98c
+  - enabled: 1
+    path: Assets/Scenes/GolfScene.unity
+    guid: 6dc6c00da34a375429e4ea7ee841bccd
+  m_configObjects: {}

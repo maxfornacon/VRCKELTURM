@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 2d37f7327fe72c04b84e3bdf66fb3381
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - woodBrick: {fileID: 118189015407120742, guid: 9ecf3d4cf960dde46bc42ecdb5e2c37f,
+      type: 3}
+  - goldBrick: {instanceID: 0}
+  - iceBrick: {instanceID: 0}
+  - rubberBrick: {instanceID: 0}
+  - hydrogenBrick: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
