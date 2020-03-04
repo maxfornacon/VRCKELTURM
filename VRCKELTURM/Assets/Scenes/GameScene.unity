@@ -374,6 +374,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6896000632908603470, guid: fda67dc1c08f649428736234516569b2,
+        type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 1881823270}
+    - target: {fileID: 6896000632908603470, guid: fda67dc1c08f649428736234516569b2,
+        type: 3}
+      propertyPath: inputModule
+      value: 
+      objectReference: {fileID: 1881823269}
+    - target: {fileID: 2422674802421439818, guid: fda67dc1c08f649428736234516569b2,
+        type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 1881823270}
+    - target: {fileID: 2422674802421439818, guid: fda67dc1c08f649428736234516569b2,
+        type: 3}
+      propertyPath: inputModule
+      value: 
+      objectReference: {fileID: 1881823269}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda67dc1c08f649428736234516569b2, type: 3}
 --- !u!1 &483122264 stripped
@@ -1536,7 +1556,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pointer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 483122265}
     - target: {fileID: 8071086175867464607, guid: ae484b539935843cba45171c28ef4828,
         type: 3}
       propertyPath: timerUI

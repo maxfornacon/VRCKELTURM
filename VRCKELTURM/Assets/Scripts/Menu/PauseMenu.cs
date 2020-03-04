@@ -24,11 +24,6 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject timerUI;
 
-    private void Start()
-    {
-        //Pause();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -37,7 +32,6 @@ public class PauseMenu : MonoBehaviour
           if (GameIsPaused)
           {
               Resume();
-              
           }
           else
           {
