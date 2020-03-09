@@ -32,7 +32,7 @@ public class LoseDetector : MonoBehaviour
     }
     
     /// <summary>
-    /// Checks if collisionCount is greater than 3. If so the game is lost and the EndGame() method of the game manager
+    /// Checks if collisionCount is greater than 1. If so the game is lost and the EndGame() method of the game manager
     /// is triggered.
     /// </summary>
     void Update()
