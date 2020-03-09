@@ -14,17 +14,17 @@ public class MagicWand : BaseInput
     
     public override bool GetMouseButton(int button)
     {
-        return OVRInput.Get(leftTrigger,  OVRInput.Controller.Touch);
+        return OVRInput.Get(leftTrigger);
     }
 
     public override bool GetMouseButtonDown(int button)
     {
-        return OVRInput.GetDown(leftTrigger,  OVRInput.Controller.Touch);
+        return OVRInput.GetDown(leftTrigger);
     }
 
     public override bool GetMouseButtonUp(int button)
     {
-        return OVRInput.GetUp(leftTrigger, OVRInput.Controller.Touch);
+        return OVRInput.GetUp(leftTrigger);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,7 +39,7 @@ public class MagicWand : BaseInput
 
     private void OnTriggerStay(Collider other)
     {
-        if (_colliding && (OVRInput.GetDown(leftTrigger,  OVRInput.Controller.LTouch) || OVRInput.GetDown(rightTrigger, OVRInput.Controller.RTouch)))
+        if (_colliding && (OVRInput.GetDown(leftTrigger) || OVRInput.GetDown(rightTrigger)))
         {
             _pullable = _lastCollidingObject;
             Debug.Log("Button Down");
@@ -55,7 +55,7 @@ public class MagicWand : BaseInput
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (_pullable && (OVRInput.Get(leftTrigger,  OVRInput.Controller.LTouch) || OVRInput.Get(rightTrigger, OVRInput.Controller.RTouch)))
+        if (_pullable && (OVRInput.Get(leftTrigger) || OVRInput.Get(rightTrigger)))
         {
             var position = this.transform.position;
             _distance = Vector3.Distance(_pullable.transform.position, position);
@@ -68,7 +68,7 @@ public class MagicWand : BaseInput
 
     private void Update()
     {
-        if (OVRInput.Get(leftTrigger,  OVRInput.Controller.LTouch) || OVRInput.Get(rightTrigger, OVRInput.Controller.RTouch))
+        if (OVRInput.GetUp(leftTrigger) || OVRInput.GetUp(rightTrigger))
         {
             Debug.Log("Space UP");
             _pullable = null;
