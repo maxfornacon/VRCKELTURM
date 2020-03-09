@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject rightController;
 
     public GameObject timerUI;
+    public GameObject endGameScreen;
 
     // Update is called once per frame
     void Update()
@@ -56,6 +57,20 @@ public class PauseMenu : MonoBehaviour
       timerUI.SetActive(false);
     }
 
+    public void GameOver()
+    {
+        endGameScreen.SetActive(true);
+        pointer.SetActive(true);
+      
+        leftController.SetActive(true);
+        rightController.SetActive(true);
+      
+        leftHand.SetActive(false);
+        rightHand.SetActive(false);
+      
+        timerUI.SetActive(false); 
+    }
+
     public void Resume()
     {
       pauseMenuUI.SetActive(false);
@@ -87,5 +102,6 @@ public class PauseMenu : MonoBehaviour
       Debug.Log("Restarting Scene");
       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
       Resume();
+      FindObjectOfType<GameManager>().Restart();
     }
 }

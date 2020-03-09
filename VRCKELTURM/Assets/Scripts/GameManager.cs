@@ -7,15 +7,15 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
 	bool gameHasEnded = false;
-	public GameObject gameOverScreen;
-	public float timeUntilLoseScreen = 1f;
-
+	public float timeUntilLoseScreen = 0f;
+	
 	/// <summary>
 	/// 	Displays the game over screen.
 	/// </summary>
 	public void GameOver ()
 	{
-		gameOverScreen.SetActive(true);
+		GetComponent<AudioSource>().Play();
+		FindObjectOfType<PauseMenu>().GameOver();
 	}
 
 	/// <summary>
@@ -34,9 +34,8 @@ public class GameManager : MonoBehaviour {
 	/// <summary>
 	/// 	Restarts the current level.
 	/// </summary>
-	void Restart ()
+	public void Restart ()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		gameHasEnded = false;
 	}
 

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoseDetector2 : MonoBehaviour
+public class LoseDetector : MonoBehaviour
 {
     private short collisionCount = 0;
     
@@ -13,7 +13,7 @@ public class LoseDetector2 : MonoBehaviour
     /// <param name="other">the collision partner</param>
     private void OnCollisionEnter(Collision other)
     {
-        if (other.transform.gameObject.CompareTag("Blocks"))
+        if (other.gameObject.CompareTag("Blocks"))
         {
             collisionCount++;
         }
@@ -25,7 +25,7 @@ public class LoseDetector2 : MonoBehaviour
     /// <param name="other">The collision partner</param>
     private void OnCollisionExit(Collision other)
     {
-        if (other.transform.gameObject.CompareTag("Blocks"))
+        if (other.gameObject.CompareTag("Blocks"))
         {
             collisionCount--;
         }
@@ -37,9 +37,9 @@ public class LoseDetector2 : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (collisionCount > 3)
+        if (collisionCount > 1)
         {
-           FindObjectOfType<GameManager>().EndGame();
+            FindObjectOfType<GameManager>().EndGame();
         }        
     }
 }
