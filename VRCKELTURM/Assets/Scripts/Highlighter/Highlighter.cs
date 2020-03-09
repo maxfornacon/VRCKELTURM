@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Highlighter : MonoBehaviour
@@ -8,7 +9,7 @@ public class Highlighter : MonoBehaviour
 
     //Konstanten zum Referenzieren auf Breite des Outline Materials im Shader
     private const string OutlineWidthKey = "_Outline";
-    private const float OutlineWidthValue = 1.5f;
+    private const float OutlineWidthValue = 0.04f;
 
     void Start()
     {
@@ -34,5 +35,21 @@ public class Highlighter : MonoBehaviour
     {
 
         _outlineMaterial.SetFloat(OutlineWidthKey, OutlineWidthValue);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            ShowOutlineMaterial();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            HideOutlineMaterial();
+        }
     }
 }
