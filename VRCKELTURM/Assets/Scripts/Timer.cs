@@ -26,4 +26,9 @@ public class Timer : MonoBehaviour
            timerValue.text = currentTime.ToString("0");   
         }
     }
+
+    public void StopTimer()
+    {
+        run = false; 
+    }
 }

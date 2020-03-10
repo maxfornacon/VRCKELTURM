@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour {
 	public AudioClip startingClip;
 	public AudioClip backgroundMusic;
 
-
+	/// <summary>
+	/// Plays starting sound and starts the background music.
+	/// </summary>
 	private void Start()
 	{
 		_audioSourceEffects = GetComponent<AudioSource>();
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// 	Displays the game over screen.
+	/// Plays losing sounds and activates the game over screen.
 	/// </summary>
 	public void GameOver ()
 	{
@@ -39,12 +41,16 @@ public class GameManager : MonoBehaviour {
 		FindObjectOfType<PauseMenu>().GameOver();
 	}
 
+	/// <summary>
+	/// Plays winning sounds and activates the win screen.
+	/// </summary>
 	public void GameCompleted()
 	{
 		_audioSourceBackgroundMusic.Stop();
 		
 		_audioSourceEffects.clip = winClip;
 		_audioSourceEffects.Play();
+		FindObjectOfType<PauseMenu>().Win();   
 	}
 
 	/// <summary>
