@@ -11,9 +11,6 @@ public class GameManager : MonoBehaviour {
 	public AudioSource _audioSourceEffects;
 	public AudioSource _audioSourceBackgroundMusic;
 	
-	public float timeUntilLoseScreen = 0f;
-	public float timeUntilSuccessScreen = 3f;
-
 	public AudioClip gameOverClip;
 	public AudioClip winClip;
 	public AudioClip startingClip;
@@ -35,15 +32,19 @@ public class GameManager : MonoBehaviour {
 	/// </summary>
 	public void GameOver ()
 	{
-		GetComponent<AudioSource>().clip = gameOverClip;
-		GetComponent<AudioSource>().Play();
+		_audioSourceBackgroundMusic.Stop();
+		
+		_audioSourceEffects.clip = gameOverClip;
+		_audioSourceEffects.Play();
 		FindObjectOfType<PauseMenu>().GameOver();
 	}
 
 	public void GameCompleted()
 	{
-		GetComponent<AudioSource>().clip = winClip;
-		GetComponent<AudioSource>().Play();
+		_audioSourceBackgroundMusic.Stop();
+		
+		_audioSourceEffects.clip = winClip;
+		_audioSourceEffects.Play();
 	}
 
 	/// <summary>
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour {
 		if (_gameHasEnded == false)
 		{
 			_gameHasEnded = true;
-			Invoke(nameof(GameOver), timeUntilLoseScreen);
+			GameOver();
 		}
 	}
 
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour {
 		if (_gameHasEnded == false)
 		{
 			_gameHasEnded = true;
-			Invoke(nameof(GameCompleted), timeUntilSuccessScreen);
+			GameCompleted();
 		}
 	}
 	

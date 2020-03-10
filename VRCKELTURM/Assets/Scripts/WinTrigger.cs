@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WinTrigger : MonoBehaviour
 {
     private short collisionCount = 0;
+    private float startTime = 0.0f;
     
     /// <summary>
     /// Increases collisionCount on collision enter.
@@ -29,16 +31,32 @@ public class WinTrigger : MonoBehaviour
             collisionCount--;
         }
     }
-    
-    /// <summary>
-    /// Checks if collisionCount = 3. If so the game is won and the WinGame() method of the game manager
-    /// is triggered.
-    /// </summary>
-    void Update()
+
+    private void OnTriggerStay(Collider other)
     {
-        if (collisionCount == 3)
+        if (other.gameObject.CompareTag("Blocks"))
         {
-            FindObjectOfType<GameManager>().WinGame();
-        }        
+            if (collisionCount == 3)
+            {
+                startTime += 0.1f * Time.deltaTime;
+                Debug.Log(startTime);
+
+                if (startTime >= 1.0f)
+                {
+                    if (collisionCount == 3)
+                    {
+                        FindObjectOfType<GameManager>().WinGame(); 
+                    }
+                    else
+                    {
+                        startTime = 0.0f;
+                    }
+                }
+            }
+            else
+            {
+                startTime = 0.0f;
+            }
+        } 
     }
 }
