@@ -280,12 +280,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &92580964 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6937380134941069536, guid: 348265fcb9b20ce459592d48e4d80213,
-    type: 3}
-  m_PrefabInstance: {fileID: 5109142346522376123}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &181034480 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5109142346417850839, guid: 348265fcb9b20ce459592d48e4d80213,
@@ -908,6 +902,12 @@ Canvas:
 --- !u!1 &1515903876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5109142347690929215, guid: 348265fcb9b20ce459592d48e4d80213,
+    type: 3}
+  m_PrefabInstance: {fileID: 5109142346522376123}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1555135006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2609252299365171372, guid: 348265fcb9b20ce459592d48e4d80213,
     type: 3}
   m_PrefabInstance: {fileID: 5109142346522376123}
   m_PrefabAsset: {fileID: 0}
@@ -1956,7 +1956,7 @@ PrefabInstance:
         type: 3}
       propertyPath: winText
       value: 
-      objectReference: {fileID: 92580964}
+      objectReference: {fileID: 1555135006}
     - target: {fileID: 5109142347690929210, guid: 348265fcb9b20ce459592d48e4d80213,
         type: 3}
       propertyPath: timer
@@ -2130,7 +2130,12 @@ PrefabInstance:
     - target: {fileID: 3863526465991620546, guid: 348265fcb9b20ce459592d48e4d80213,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 63.6
+      value: 51.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156740170723680323, guid: 348265fcb9b20ce459592d48e4d80213,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 830302926586219657, guid: 348265fcb9b20ce459592d48e4d80213,
         type: 3}
@@ -2161,6 +2166,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSizeBase
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 830302926586219657, guid: 348265fcb9b20ce459592d48e4d80213,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.90659434
+      objectReference: {fileID: 0}
+    - target: {fileID: 830302926586219657, guid: 348265fcb9b20ce459592d48e4d80213,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.9150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 830302926586219657, guid: 348265fcb9b20ce459592d48e4d80213,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.22877358
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 348265fcb9b20ce459592d48e4d80213, type: 3}
