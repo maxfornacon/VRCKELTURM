@@ -17,6 +17,6 @@ public class FollowPhysicsReload : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      rb.MovePosition(target.transform.position - new Vector3(0f, 0.08f, 0.085f));
+      rb.MovePosition(target.transform.position);
     }
 }
