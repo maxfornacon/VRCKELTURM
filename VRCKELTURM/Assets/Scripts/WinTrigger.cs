@@ -8,9 +8,9 @@ public class WinTrigger : MonoBehaviour
     private short _collisionCount = 0;
     private float _trippleCollisionTime = 0.0f;
 
-    private static readonly Color32 defaultColor = new Color32(255, 55, 55, 200);
-    private static readonly Color32 pendingColor = new Color32(255, 255, 55, 200);
-    private static readonly Color32 successColor = new Color32(55, 200, 20, 200);
+    private static readonly Color32 defaultColor = new Color32(255, 55, 55, 220);
+    private static readonly Color32 pendingColor = new Color32(255, 255, 55, 220);
+    private static readonly Color32 successColor = new Color32(55, 200, 20, 220);
 
     private Material _material;
 
