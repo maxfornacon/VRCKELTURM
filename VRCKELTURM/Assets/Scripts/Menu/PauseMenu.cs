@@ -96,7 +96,7 @@ public class PauseMenu : MonoBehaviour
         
         timerUI.SetActive(false);
         timer.StopTimer();
-        winText.transform.GetChild(1).GetComponent<TMP_Text>().text = timer.currentTime.ToString();
+        winText.transform.GetChild(1).GetComponent<TMP_Text>().text = timer.currentTime.ToString("0");
         Time.timeScale = 0f; //stop game
         
     }
