@@ -1186,7 +1186,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.616
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1688,6 +1688,11 @@ PrefabInstance:
       propertyPath: BypassEffects
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4181478948810385941, guid: 7dca5b99f9959c441a03f0039c0137f2,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4181478948810385940, guid: 7dca5b99f9959c441a03f0039c0137f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1787,20 +1792,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1371873058626725142, guid: 348265fcb9b20ce459592d48e4d80213,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 14.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609252299365171372, guid: 348265fcb9b20ce459592d48e4d80213,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5109142346417850832, guid: 348265fcb9b20ce459592d48e4d80213,
         type: 3}
       propertyPath: m_Name
       value: TVCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692021253017376907, guid: 348265fcb9b20ce459592d48e4d80213,
+        type: 3}
+      propertyPath: m_Name
+      value: GameOver (TMP)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692021253017376907, guid: 348265fcb9b20ce459592d48e4d80213,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692021253017376907, guid: 348265fcb9b20ce459592d48e4d80213,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5109142347690929209, guid: 348265fcb9b20ce459592d48e4d80213,
         type: 3}
@@ -1811,6 +1821,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2609252299365171372, guid: 348265fcb9b20ce459592d48e4d80213,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371873058626725142, guid: 348265fcb9b20ce459592d48e4d80213,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14.6
       objectReference: {fileID: 0}
     - target: {fileID: 5109142346417850836, guid: 348265fcb9b20ce459592d48e4d80213,
         type: 3}
@@ -2076,21 +2096,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 36.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1692021253017376907, guid: 348265fcb9b20ce459592d48e4d80213,
-        type: 3}
-      propertyPath: m_Name
-      value: GameOver (TMP)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1692021253017376907, guid: 348265fcb9b20ce459592d48e4d80213,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1692021253017376907, guid: 348265fcb9b20ce459592d48e4d80213,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7000982855202222076, guid: 348265fcb9b20ce459592d48e4d80213,
         type: 3}

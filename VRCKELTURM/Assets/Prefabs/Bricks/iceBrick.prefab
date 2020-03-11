@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7537838116578232337}
   - component: {fileID: 6128390349890245030}
   - component: {fileID: 878206673835413190}
+  - component: {fileID: 114602052103503100}
   m_Layer: 0
   m_Name: iceBrick
   m_TagString: Blocks
@@ -61,6 +62,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 80125e344257d3a41b676e29eec8c3f3, type: 2}
+  - {fileID: 2100000, guid: fd9041b57cb646a49b8486b4e286d2a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,3 +128,15 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!114 &114602052103503100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8415044749751768940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634d9d2a5886adc4dacb666bf55eee8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
