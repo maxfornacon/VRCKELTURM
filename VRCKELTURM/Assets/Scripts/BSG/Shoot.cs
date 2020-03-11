@@ -19,6 +19,7 @@ public class Shoot : MonoBehaviour
     if(OVRInput.Get(OVRInput.RawButton.LIndexTrigger) || OVRInput.Get(OVRInput.RawButton.RIndexTrigger));
     {
       triggered = true;
+      //triggered = false;
     }
 
     if(triggered)
