@@ -3623,6 +3623,8 @@ GameObject:
   - component: {fileID: 8538808191581200281}
   - component: {fileID: 8538808191579193695}
   - component: {fileID: 8538808191579193694}
+  - component: {fileID: 8538808191579193692}
+  - component: {fileID: 8538808191579193700}
   - component: {fileID: 8538808191579193690}
   m_Layer: 0
   m_Name: Bolzen
@@ -3631,8 +3633,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &8538808191579193690
-MeshCollider:
+--- !u!65 &8538808191579193690
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3641,10 +3643,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300002, guid: 5b9f3e08882067648ad75ba956844d25, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.19999999, y: 0.02, z: 0.02}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8538808191579193691
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,6 +3668,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8538808191579193692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8538808191579193689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293c783a5ad3c2e46a021e9fc3ae6010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 807141173}
+  rb: {fileID: 0}
+  force: 1
 --- !u!1 &8538808191579193693
 GameObject:
   m_ObjectHideFlags: 0
@@ -3856,6 +3872,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &8538808191579193700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8538808191579193689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.02, z: 0.21}
+  m_Center: {x: 0, y: 0, z: 0.095}
 --- !u!23 &8538808191581200281
 MeshRenderer:
   m_ObjectHideFlags: 0
