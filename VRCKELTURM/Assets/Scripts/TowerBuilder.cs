@@ -8,6 +8,7 @@ public class TowerBuilder : MonoBehaviour
   public static float startHeight;
   public static int layers;
   public static float scale;
+  public static float goalHeight;
 
 
   //link BrickTyp here in Unity
@@ -21,17 +22,21 @@ public class TowerBuilder : MonoBehaviour
   //float variation = 0.98f;
   public static float variation;
 
+  public GameObject winTrigger;
+
   public static void setTowerSettings(
       float startHeight2,
       int layers2,
       float scale2,
       List<int> probability2,
-      float variation2) {
+      float variation2,
+      float goalHeight2) {
     startHeight = startHeight2 + 0.1f;
     layers = layers2;
     scale = scale2;
     probability = probability2;
     variation = variation2;
+    goalHeight = goalHeight2;
   }
 
   void Start()
@@ -39,7 +44,10 @@ public class TowerBuilder : MonoBehaviour
     buildTower();
   }
 
-  public void buildTower() {
+  public void buildTower()
+  {
+    Instantiate(winTrigger, new Vector3(0, goalHeight, 0), Quaternion.identity);
+    
     Debug.Log("Building Tower with " + layers + " Layers!");
     //Vector3 = (z, y, x) = (right, up, forward)
     float y = startHeight + 0.015f * scale / 2;

@@ -49,5 +49,5 @@ MonoBehaviour:
   - {fileID: 1661770021942127212, guid: 2f5ec151a8874844688b814833758ce3, type: 3}
   - {fileID: 8415044749751768940, guid: 2311d42b9c3303a4e890221804fdda65, type: 3}
   - {fileID: 5460138974858578466, guid: 69c4c9d53daf1194c90a86b4b43dbc1a, type: 3}
-  probability: 6400000028000000
-
+  winTrigger: {fileID: 13218786336616690, guid: 016bcbf1d4aacd74aa93463b377cfcc6,
+    type: 3}

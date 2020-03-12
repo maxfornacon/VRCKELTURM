@@ -13,9 +13,10 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pointer;
 
-    public static bool GameIsPaused = false;
+    private bool _gameIsPaused;
+    private bool _gameEnded;
 
-    public GameObject pauseMenuUI;
+    public GameObject pauseMenuUi;
     
     public GameObject leftHand;
     public GameObject rightHand;
@@ -34,22 +35,23 @@ public class PauseMenu : MonoBehaviour
     {
         if (OVRInput.GetDown(clickButton, controller))
         {
-          if (GameIsPaused)
-          {
+            if (_gameEnded) return;
+            if (_gameIsPaused)
+            {
               Resume();
-          }
-          else
-          {
+            }
+            else
+            {
               Pause();
-          }
+            }
         }
     }
 
     public void Pause()
     {
-      pauseMenuUI.SetActive(true);
+      pauseMenuUi.SetActive(true);
       Time.timeScale = 0f; //stop game
-      GameIsPaused = true;
+      _gameIsPaused = true;
       pointer.SetActive(true);
       
       leftController.SetActive(true);
@@ -63,6 +65,8 @@ public class PauseMenu : MonoBehaviour
 
     public void GameOver()
     {
+        _gameEnded = true;
+        
         endGameScreen.SetActive(true);
         gameOverText.SetActive(true);
         winText.SetActive(false);
@@ -81,6 +85,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Win()
     {
+        _gameEnded = true;
         endGameScreen.SetActive(true);
         
         winText.SetActive(true);
@@ -103,9 +108,9 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-      pauseMenuUI.SetActive(false);
+      pauseMenuUi.SetActive(false);
       Time.timeScale = 1f; //continue game
-      GameIsPaused = false;
+      _gameIsPaused = false;
       pointer.SetActive(false);
       
       leftController.SetActive(false);
@@ -122,12 +127,13 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(0); // Load Menu
         Time.timeScale = 1f; //continue game 
         List<int> probability = new List<int>() {100,0,0,0,0};
-        TowerBuilder.setTowerSettings(0, 0, 4, probability, 0.98f);
+        TowerBuilder.setTowerSettings(0, 0, 4, probability, 0.98f, 10f);
         //SceneManager.LoadScene("MenuScene");
     }
 
     public void RestartGame()
     {
+        Debug.Log("IT IS CAAAAAAAAAALLED");
         Resume();
         FindObjectOfType<GameManager>().Restart();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

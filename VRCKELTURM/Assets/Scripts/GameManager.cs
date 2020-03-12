@@ -23,15 +23,15 @@ public class GameManager : MonoBehaviour {
 	{
 		_audioSourceEffects = GetComponent<AudioSource>();
 		_audioSourceEffects.clip = startingClip;
-		_audioSourceEffects.Play(10000);
+		_audioSourceEffects.PlayDelayed(1);
 		
 		_audioSourceBackgroundMusic.clip = backgroundMusic;
-		_audioSourceBackgroundMusic.Play(70000);
+		_audioSourceBackgroundMusic.Play(3);
 	}
 
 	/// <summary>
 	/// Plays losing sounds and activates the game over screen.
-	/// </summary>
+	/// </summary>	
 	public void GameOver ()
 	{
 		_audioSourceBackgroundMusic.Stop();
