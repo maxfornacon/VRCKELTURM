@@ -133,9 +133,14 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        Debug.Log("IT IS CAAAAAAAAAALLED");
-        Resume();
+        _gameEnded = false;
+        //Resume();
         FindObjectOfType<GameManager>().Restart();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void Start()
+    {
+        Resume();
     }
 }
