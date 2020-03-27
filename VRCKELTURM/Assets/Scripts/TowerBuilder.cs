@@ -9,7 +9,7 @@ public class TowerBuilder : MonoBehaviour
   public static int layers;
   public static float scale;
   public static float goalHeight;
-
+  public static bool loseable;
 
   //link BrickTyp here in Unity
   public List<GameObject> bricks = new List<GameObject>();
@@ -30,13 +30,15 @@ public class TowerBuilder : MonoBehaviour
       float scale2,
       List<int> probability2,
       float variation2,
-      float goalHeight2) {
+      float goalHeight2,
+      bool loseable2) {
     startHeight = startHeight2 + 0.1f;
     layers = layers2;
     scale = scale2;
     probability = probability2;
     variation = variation2;
     goalHeight = goalHeight2;
+    loseable = loseable2;
   }
 
   void Start()

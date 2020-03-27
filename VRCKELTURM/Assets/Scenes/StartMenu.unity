@@ -355,12 +355,12 @@ PrefabInstance:
     - target: {fileID: 398663046482252012, guid: 5d62fce05e2691e45b90f73f7bfebea0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8469608372965753832, guid: 5d62fce05e2691e45b90f73f7bfebea0,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 398663045960947716, guid: 5d62fce05e2691e45b90f73f7bfebea0,
         type: 3}
@@ -462,6 +462,11 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 398663046635465394, guid: 5d62fce05e2691e45b90f73f7bfebea0,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2114062455}
     - target: {fileID: 8469608372479040646, guid: 5d62fce05e2691e45b90f73f7bfebea0,
         type: 3}
       propertyPath: m_SizeDelta.x

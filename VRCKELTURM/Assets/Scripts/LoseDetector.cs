@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoseDetector : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class LoseDetector : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (collisionCount > 1)
+        if (collisionCount > 1 && SceneManager.GetActiveScene().name == "")
         {
             FindObjectOfType<GameManager>().EndGame();
         }        

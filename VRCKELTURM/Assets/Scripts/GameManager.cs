@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
 	public AudioClip startingClip;
 	public AudioClip backgroundMusic;
 
+	private TowerBuilder _towerBuilder;
+
 	/// <summary>
 	/// Plays starting sound and starts the background music.
 	/// </summary>
@@ -27,6 +29,8 @@ public class GameManager : MonoBehaviour {
 		
 		_audioSourceBackgroundMusic.clip = backgroundMusic;
 		_audioSourceBackgroundMusic.Play(3);
+
+		_towerBuilder = FindObjectOfType<TowerBuilder>();
 	}
 
 	/// <summary>
@@ -60,8 +64,11 @@ public class GameManager : MonoBehaviour {
 	{
 		if (_gameHasEnded == false)
 		{
-			_gameHasEnded = true;
-			GameOver();
+			if (_towerBuilder.loseable == true)
+			{
+				_gameHasEnded = true;
+				GameOver();
+			}
 		}
 	}
 
