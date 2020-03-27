@@ -47,7 +47,6 @@ public class WinTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(_trippleCollisionTime);
         if (other.gameObject.CompareTag("Blocks"))
         {
             if (_collisionCount == 3)

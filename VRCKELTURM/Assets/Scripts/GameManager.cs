@@ -25,10 +25,10 @@ public class GameManager : MonoBehaviour {
 	{
 		_audioSourceEffects = GetComponent<AudioSource>();
 		_audioSourceEffects.clip = startingClip;
-		_audioSourceEffects.PlayDelayed(1);
+		_audioSourceEffects.PlayDelayed(0.3f);
 		
 		_audioSourceBackgroundMusic.clip = backgroundMusic;
-		_audioSourceBackgroundMusic.Play(3);
+		_audioSourceBackgroundMusic.PlayDelayed(3);
 
 		_towerBuilder = FindObjectOfType<TowerBuilder>();
 	}
@@ -64,11 +64,8 @@ public class GameManager : MonoBehaviour {
 	{
 		if (_gameHasEnded == false)
 		{
-			if (_towerBuilder.loseable == true)
-			{
-				_gameHasEnded = true;
-				GameOver();
-			}
+			_gameHasEnded = true;
+			GameOver();
 		}
 	}
 

@@ -33,7 +33,6 @@ public class MagicWand : BaseInput
         {
             _colliding = true;
             _lastCollidingObject = other.gameObject.GetComponent<Rigidbody>();
-            Debug.Log("Collision Enter");
         }
     }
 
@@ -42,14 +41,12 @@ public class MagicWand : BaseInput
         if (_colliding && (OVRInput.GetDown(leftTrigger) || OVRInput.GetDown(rightTrigger)))
         {
             _pullable = _lastCollidingObject;
-            Debug.Log("Button Down");
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         _colliding = false;
-        Debug.Log("Collision Exit");
     }
 
     // Update is called once per frame
@@ -60,8 +57,6 @@ public class MagicWand : BaseInput
             var position = this.transform.position;
             _distance = Vector3.Distance(_pullable.transform.position, position);
             var direction = position - _pullable.position;
-            Debug.Log(_distance);
-
             _pullable.AddForce(direction * (_distance * 1000 * Time.deltaTime), ForceMode.Force);
         }
     }
@@ -70,7 +65,6 @@ public class MagicWand : BaseInput
     {
         if (OVRInput.GetUp(leftTrigger) || OVRInput.GetUp(rightTrigger))
         {
-            Debug.Log("Space UP");
             _pullable = null;
         }
     }

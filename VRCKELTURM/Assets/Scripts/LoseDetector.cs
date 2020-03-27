@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class LoseDetector : MonoBehaviour
 {
     private short collisionCount = 0;
+
+    public TowerBuilder TowerBuilder;
     
     /// <summary>
     /// Increases collisionCount on collision enter.
@@ -38,7 +40,7 @@ public class LoseDetector : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (collisionCount > 1 && SceneManager.GetActiveScene().name == "")
+        if (collisionCount > 1 && TowerBuilder.loseable == true )
         {
             FindObjectOfType<GameManager>().EndGame();
         }        

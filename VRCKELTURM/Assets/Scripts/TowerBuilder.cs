@@ -31,7 +31,8 @@ public class TowerBuilder : MonoBehaviour
       List<int> probability2,
       float variation2,
       float goalHeight2,
-      bool loseable2) {
+      bool loseable2
+     ) {
     startHeight = startHeight2 + 0.1f;
     layers = layers2;
     scale = scale2;
@@ -50,7 +51,6 @@ public class TowerBuilder : MonoBehaviour
   {
     Instantiate(winTrigger, new Vector3(0, goalHeight, 0), Quaternion.identity);
     
-    Debug.Log("Building Tower with " + layers + " Layers!");
     //Vector3 = (z, y, x) = (right, up, forward)
     float y = startHeight + 0.015f * scale / 2;
     for (int i = 0; i < layers; i++)

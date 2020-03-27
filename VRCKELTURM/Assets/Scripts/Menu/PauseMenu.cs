@@ -127,7 +127,7 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(0); // Load Menu
         Time.timeScale = 1f; //continue game 
         List<int> probability = new List<int>() {100,0,0,0,0};
-        TowerBuilder.setTowerSettings(0, 0, 4, probability, 0.98f, 10f);
+        TowerBuilder.setTowerSettings(0, 0, 4, probability, 0.98f, 100f, false);
         //SceneManager.LoadScene("MenuScene");
     }
 

@@ -8,14 +8,14 @@ public class MainMenu : MonoBehaviour
     public void LoadLevelOne() // Level 1 nur Holz
     {
         List<int> probability = new List<int>() {100,0,0,0,0};
-        TowerBuilder.setTowerSettings(0, 18, 4, probability, 0.94f, 1.54f, true);
+        TowerBuilder.setTowerSettings(0, 18, 4, probability, 0.94f, 1.42f, true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void LoadLevelTwo() // Level 2 viel holz und etwas von allem anderen
     {
         List<int> probability = new List<int>() {40,15,15,15,15};
-        TowerBuilder.setTowerSettings(0, 18, 4, probability, 0.98f, 1.54f, true);
+        TowerBuilder.setTowerSettings(0, 18, 4, probability, 0.98f, 1.42f, true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour
     public void LoadLevelFour() // Level 4 sehr rutschig
     {
       List<int> probability = new List<int>() {25,25,0,50,0};
-      TowerBuilder.setTowerSettings(0, 20, 4, probability, 0.98f, 1.66f, false);
+      TowerBuilder.setTowerSettings(0, 20, 4, probability, 0.98f, 1.66f, true);
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -44,7 +44,6 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("quited game");
         Application.Quit();
     }
 }
